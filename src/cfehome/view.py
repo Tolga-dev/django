@@ -7,6 +7,9 @@ from visits.models import PageVisit
 curr_dir = pathlib.Path(__file__).resolve().parent
 
 def home_page_view(req, *args, **kwargs):
+    return about_view(req, *args, **kwargs)
+
+def about_view(req, *args, **kwargs):
     queryset = PageVisit.objects.all()
     my_title = "My page"
     my_context = {
@@ -16,6 +19,7 @@ def home_page_view(req, *args, **kwargs):
     PageVisit.objects.create()
     html_template = "home.html"
     return render(req, html_template, my_context)
+
 
 def home_old_page_view(req, *args, **kwargs):
     my_title = "My page"
