@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'commando',
     'visits'
 ]
 
@@ -96,7 +97,7 @@ DATABASES = {
     }
 }
 CONN_MAX_AGE = config("CONN_MAX_AGE",default=30, cast=int) 
-DATABASE_URL = config("DATABASE_URL",cast=str)
+DATABASE_URL = config("DATABASE_URL",default=None)
 
 if DATABASE_URL is not None:
     import dj_database_url
@@ -144,6 +145,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_BASE_DIRS = BASE_DIR / "staticfiles"
+STATICFILES_BASE_DIRS.mkdir(parents=True, exist_ok=True)
 STATICFILES_VENDOR_DIRS = STATICFILES_BASE_DIRS / "vendor"
 
 STATICFILES_DIRS = [
