@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Test!</title>
-    {% include 'base/css.html' %}
+    /<title>Test!</title>
 </head>
 <body>
-    {% include 'nav/nav-bar.html' %}
+    
     <h1> {% block head_title %} testing {% endblock head_title %} </h1>
+
     {% block content %}
+    
+    testing!
+    
     {% endblock content%}
-    {% include 'base/js.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
 </body>
 </html>

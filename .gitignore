@@ -1,4 +1,7 @@
-﻿# Byte-compiled / optimized / DLL files
+﻿src/staticfiles/vendors
+local-cdn/
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
